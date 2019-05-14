@@ -607,11 +607,11 @@ void coinbase_create(YAAMP_COIND *coind, YAAMP_JOB_TEMPLATE *templ, json_value *
 	char payees[4];
 	int npayees = 1;
 	char script_dests[4096] = { 0 };
-	//
-	json_value* founderreward = json_get_array(json_result, "founderreward");
+	
+	json_value* founderreward = json_get_array(json_result, "fundreward");
 	if (founderreward)
 	{
-		const char *payee = json_get_string(founderreward, "founderpayee");
+		const char *payee = json_get_string(founderreward, "payee");
 		json_int_t amount = json_get_int(founderreward, "amount");
 		if (payee && amount)
 		{
