@@ -608,20 +608,6 @@ void coinbase_create(YAAMP_COIND *coind, YAAMP_JOB_TEMPLATE *templ, json_value *
 	int npayees = 1;
 	char script_dests[4096] = { 0 };
 	
-	json_value* founderreward = json_get_array(json_result, "fundreward");
-	if (founderreward)
-	{
-		const char *payee = json_get_string(founderreward, "payee");
-		json_int_t amount = json_get_int(founderreward, "amount");
-		if (payee && amount)
-		{
-			char script_payee[128] = { 0 };
-			npayees++;
-			available -= amount;
-			base58_decode(payee, script_payee);
-			job_pack_tx(coind, script_dests, amount, script_payee);
-		}
-	}
  	json_value* masternode = json_get_object(json_result, "masternode");
 	bool masternode_enabled = json_get_bool(json_result, "masternode_payments_enforced");
 	if (masternode_enabled && masternode)
@@ -637,6 +623,22 @@ void coinbase_create(YAAMP_COIND *coind, YAAMP_JOB_TEMPLATE *templ, json_value *
 			job_pack_tx(coind, script_dests, amount, script_payee);
 		}
 	}
+	
+	json_value* fund_reward = json_get_array(json_result, "fundreward");
+	if (fund_reward)
+	{
+		const char *fund_payee = json_get_string(fund_reward, "payee");
+		json_int_t fund_amount = json_get_int(fund_reward, "amount");
+		if (fund_payee && fund_amount)
+		{
+			char fund_script_payee[128] = { 0 };
+			npayees++;
+			available -= fund_amount;
+			base58_decode(fund_payee, fund_script_payee);
+			job_pack_tx(coind, script_dests, fund_amount, fund_script_payee);
+		}
+	}
+	
  	sprintf(payees, "%02x", npayees);
 	strcat(templ->coinb2, payees);
 	strcat(templ->coinb2, script_dests);
