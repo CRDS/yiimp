@@ -28,18 +28,19 @@ $payout_freq = (YAAMP_PAYMENTS_FREQ / 3600)." hours";
 <!--  -->
 
 <div class="main-left-box">
-<div class="main-left-title">YII MINING POOLS</div>
+<div class="main-left-title">The Official Credits (CRDS) Mining Pool</div>
 <div class="main-left-inner">
 
 <ul>
 
+<li>This pool is managed by the Credits Developers and by mining here you contribute to our Development Fund through your fees.</li>
 <li>YiiMP is a pool management solution based on the Yii Framework.</li>
-<li>This fork was based on the yaamp source code and is now an open source project.</li>
-<li>No registration is required, we do payouts in the currency you mine. Use your wallet address as the username.</li>
+<li>This fork was based on YaaMP which is now an open source project.</li>
+<li>No registration is required, payouts are done in the currency you mine. Use your wallet address as the username.</li>
 <li>&nbsp;</li>
-<li>Payouts are made automatically every <?= $payout_freq ?> for all balances above <b><?= $min_payout ?></b>, or <b><?= $min_sunday ?></b> on Sunday.</li>
+<li>Payouts are made automatically every <?= $payout_freq ?> for all balances above <b>1 CRDS</b>.</li>
 <li>For some coins, there is an initial delay before the first payout, please wait at least 6 hours before asking for support.</li>
-<li>Blocks are distributed proportionally among valid submitted shares.</li>
+<li>Blocks are distributed proportionally among valid submitted shares (Prop. Reward System). </li>
 
 <br/>
 
@@ -50,7 +51,7 @@ $payout_freq = (YAAMP_PAYMENTS_FREQ / 3600)." hours";
 <!--  -->
 
 <div class="main-left-box">
-<div class="main-left-title">STRATUM SERVERS</div>
+<div class="main-left-title">Stratum Servers</div>
 <div class="main-left-inner">
 
 <ul>
@@ -76,7 +77,7 @@ $payout_freq = (YAAMP_PAYMENTS_FREQ / 3600)." hours";
 <!--  -->
 
 <div class="main-left-box">
-<div class="main-left-title">LINKS</div>
+<div class="main-left-title">Links</div>
 <div class="main-left-inner">
 
 <ul>
@@ -101,7 +102,7 @@ $payout_freq = (YAAMP_PAYMENTS_FREQ / 3600)." hours";
 
 <!--  -->
 
-<a class="twitter-timeline" href="https://twitter.com/hashtag/YAAMP" data-widget-id="617405893039292417" data-chrome="transparent" height="450px" data-tweet-limit="3" data-aria-polite="polite">Tweets about #YAAMP</a>
+<a class="twitter-timeline" href="https://twitter.com/credits_crds" data-widget-id="617405893039292417" data-chrome="transparent" height="450px" data-tweet-limit="3" data-aria-polite="polite">Credits Twitter</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 </td><td valign=top>
@@ -163,4 +164,3 @@ function pool_history_refresh()
 }
 
 </script>
-
